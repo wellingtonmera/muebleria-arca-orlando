@@ -1,0 +1,575 @@
+/* =========================================
+   MUEBLERÍA ARCA ORLANDO
+   Diseño principal
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #090909;
+    color: white;
+    overflow-x: hidden;
+}
+
+:root {
+    --dorado: #f5b942;
+    --dorado-claro: #ffd978;
+    --negro: #090909;
+    --gris: #161616;
+    --verde: #20c763;
+}
+
+/* NAVEGACIÓN */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.96);
+    border-bottom: 1px solid #3b2a12;
+}
+
+nav {
+    max-width: 1450px;
+    margin: auto;
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 12px 4%;
+}
+
+.logo {
+    color: var(--dorado);
+    font-size: 26px;
+    font-weight: 900;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--dorado);
+}
+
+/* BOTONES */
+
+.btn,
+.btn-dorado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-dorado {
+    background: linear-gradient(135deg, #f5b942, #ffd978);
+    color: #111;
+}
+
+.btn-dorado:hover {
+    transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--verde);
+    color: white;
+    padding: 16px 27px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+/* PORTADA */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+        linear-gradient(90deg,
+        rgba(0,0,0,.96) 0%,
+        rgba(0,0,0,.80) 35%,
+        rgba(0,0,0,.25) 70%),
+        url("../img/hero.jpg") center/cover no-repeat;
+}
+
+.hero-contenido {
+    width: min(1450px, 92%);
+    margin: auto;
+}
+
+.hero-texto {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 82px);
+    line-height: .95;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--dorado);
+}
+
+.hero p {
+    font-size: 27px;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.telefonos {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.telefono {
+    border: 2px solid var(--dorado);
+    padding: 12px 20px;
+    border-radius: 15px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* SECCIONES */
+
+section {
+    padding: 75px 5%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion small {
+    color: var(--dorado);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.titulo-seccion h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    margin-top: 8px;
+}
+
+/* CATEGORÍAS */
+
+.categorias {
+    background: white;
+    color: #111;
+}
+
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(180px, 1fr));
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 0 25px;
+}
+
+.categoria {
+    min-width: 190px;
+    background: #111;
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.categoria:hover {
+    transform: translateY(-6px);
+}
+
+.categoria img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.categoria h3 {
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* NUESTROS TRABAJOS
+   CARRUSEL DESLIZABLE */
+
+.trabajos {
+    background: #101010;
+}
+
+.carrusel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 15px 5px 30px;
+    cursor: grab;
+}
+
+.carrusel:active {
+    cursor: grabbing;
+}
+
+.carrusel::-webkit-scrollbar {
+    height: 9px;
+}
+
+.carrusel::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 20px;
+}
+
+.carrusel::-webkit-scrollbar-thumb {
+    background: var(--dorado);
+    border-radius: 20px;
+}
+
+.trabajo-card {
+    flex: 0 0 340px;
+    height: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: start;
+    border: 1px solid #332817;
+    background: #181818;
+}
+
+.trabajo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s;
+}
+
+.trabajo-card:hover img {
+    transform: scale(1.06);
+}
+
+.trabajo-info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 45px 20px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,.95));
+}
+
+.trabajo-info h3 {
+    color: var(--dorado);
+}
+
+/* BOTONES DEL CARRUSEL */
+
+.controles-carrusel {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.control {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--dorado);
+    background: #151515;
+    color: var(--dorado);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.control:hover {
+    background: var(--dorado);
+    color: #111;
+}
+
+/* NOSOTROS */
+
+.nosotros {
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.96), rgba(0,0,0,.80));
+}
+
+.nosotros-grid {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.nosotros h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.nosotros h2 span {
+    color: var(--dorado);
+}
+
+.nosotros p {
+    line-height: 1.7;
+    color: #ddd;
+    font-size: 18px;
+}
+
+/* SERVICIOS */
+
+.servicios-grid {
+    max-width: 1300px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.servicio {
+    background: #171717;
+    border: 1px solid #2e2518;
+    padding: 35px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.servicio h3 {
+    color: var(--dorado);
+    margin-bottom: 12px;
+}
+
+/* CONTACTO */
+
+.contacto {
+    text-align: center;
+    background: #080808;
+}
+
+.contacto h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.contacto p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* WHATSAPP FLOTANTE */
+
+.whatsapp-flotante {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #25d366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 8px 30px rgba(0,0,0,.45);
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid #2d2418;
+    color: #aaa;
+}
+
+/* CELULAR */
+
+@media (max-width: 850px) {
+
+    nav {
+        min-height: 70px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .nosotros-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trabajo-card {
+        flex-basis: 82vw;
+        height: 390px;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .telefono {
+        font-size: 17px;
+    }
+
+    .trabajo-card {
+        flex-basis: 88vw;
+        height: 360px;
+    }
+
+    .titulo-seccion h2,
+    .contacto h2 {
+        font-size: 32px;
+    }
+}
+.logo-ao {
+    width: 110px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+/* ===== CATALOGO CON FOTOS ===== */
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.categorias article {
+    position: relative;
+    height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #181818;
+    border: 1px solid rgba(245, 185, 66, 0.35);
+}
+
+.categoria-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 20px;
+    font-size: 0;
+}
+
+.categorias article:nth-child(1) .categoria-img {
+    background-image: url("../img/catalogo/catalogo01.jpeg");
+}
+
+.categorias article:nth-child(2) .categoria-img {
+    background-image: url("../img/catalogo/catalogo02.jpeg");
+}
+
+.categorias article:nth-child(3) .categoria-img {
+    background-image: url("../img/catalogo/catalogo03.jpeg");
+}
+
+.categorias article:nth-child(4) .categoria-img {
+    background-image: url("../img/catalogo/catalogo04.jpeg");
+}
+
+.categorias article:nth-child(5) .categoria-img {
+    background-image: url("../img/catalogo/catalogo05.jpeg");
+}
+
+.categorias article:nth-child(6) .categoria-img {
+    background-image: url("../img/catalogo/catalogo06.jpeg");
+}
+
+.categorias article:nth-child(7) .categoria-img {
+    background-image: url("../img/catalogo/catalogo07.jpeg");
+}
+
+.categorias h3 {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    margin: 0;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    border-left: 4px solid #f5b942;
+    border-radius: 6px;
+    z-index: 2;
+}
+
+@media (max-width: 900px) {
+    .categorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .categorias {
+        grid-template-columns: 1fr;
+    }
+}

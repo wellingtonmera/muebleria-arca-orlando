@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 180">
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#f2a93b"/>
+      <stop offset="0.5" stop-color="#ffd36a"/>
+      <stop offset="1" stop-color="#e99a2d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Techo de la casa -->
+  <path d="M25 85 L130 15 L235 85"
+        fill="none"
+        stroke="url(#gold)"
+        stroke-width="15"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Chimenea -->
+  <path d="M190 47 V24 H215 V64"
+        fill="none"
+        stroke="url(#gold)"
+        stroke-width="12"
+        stroke-linejoin="round"/>
+
+  <!-- Letras AO -->
+  <text x="130" y="145"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="82"
+        font-weight="900"
+        fill="url(#gold)">AO</text>
+</svg>
