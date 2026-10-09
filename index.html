@@ -293,11 +293,35 @@
 <a class="whatsapp-flotante"
    href="https://wa.me/593989553056?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20de%20Muebler%C3%ADa%20Arca%20Orlando.%20Me%20interesa%20este%20modelo%20y%20quisiera%20solicitar%20una%20cotizaci%C3%B3n."
    target="_blank">
-   ☎️
+   <img src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/whatsapp.svg" alt="WhatsApp" width="30" height="30" style="filter:invert(1);">
 </a>
 
 
+
 <script src="js/app.js"></script>
+<script>
+function cotizarProducto(nombre) {
+  const telefono = "593989553056";
+  const mensaje = "Hola, vengo de la página Mueblería Arca Orlando. Quiero cotizar este producto: " + nombre;
+  const enlace = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+  window.open(enlace, "_blank");
+}
+document.querySelectorAll("img").forEach(function(foto) {
+  foto.style.cursor = "zoom-in";
+
+  foto.addEventListener("click", function() {
+    const visor = document.createElement("div");
+    visor.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;cursor:zoom-out;";
+
+    const imagen = document.createElement("img");
+    imagen.src = foto.src;
+    imagen.style.cssText = "max-width:95%;max-height:90vh;object-fit:contain;";
+
+    visor.appendChild(imagen);
+    visor.onclick = function() { visor.remove(); };
+    document.body.appendChild(visor);
+  });
+});</script>
 
 </body>
 </html>

@@ -573,3 +573,15 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+a.whatsapp,
+a.whatsapp-flotante,
+a.btn-whatsapp {
+    color: white !important;
+}
+
+a.whatsapp,
+a.btn-whatsapp,
+a.whatsapp-flotante,
+a[href*="wa.me"] {
+    color: white !important;
+}

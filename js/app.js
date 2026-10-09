@@ -57,3 +57,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+// Agregar botones de cotización a todas las fotos de muebles
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('img[src*="catalogo"]').forEach(function (foto) {
+    const contenedor = foto.parentElement;
+
+    // Evitar botones duplicados
+    if (contenedor.querySelector('button[onclick*="cotizarProducto"]')) {
+      return;
+    }
+
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.textContent = "🟢 Cotizar este producto";
+
+    boton.style.cssText =
+      "display:block;margin:12px auto;padding:12px 18px;" +
+      "background:#16803c;color:white;border:0;" +
+      "border-radius:8px;font-weight:bold;cursor:pointer;";
+
+    boton.addEventListener("click", function () {
+      cotizarProducto(foto.src.split("/").pop());
+    });
+
+    foto.insertAdjacentElement("afterend", boton);
+  });
+});
