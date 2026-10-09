@@ -123,12 +123,41 @@
     <p>Conoce algunos de nuestros diseños.</p>
   </div>
 
-  <div class="galeria-catalogo">
-    <img src="img/catalogo/catalogo19.jpg" alt="Mueble Arca Orlando">
-    <img src="img/catalogo/catalogo23.jpg" alt="Mueble Arca Orlando">
-    <img src="img/catalogo/catalogo24.jpg" alt="Mueble Arca Orlando">
-    <img src="img/catalogo/catalogo25.jpg" alt="Mueble Arca Orlando">
+ <div class="carrusel-catalogo">
+  <button type="button" class="flecha izquierda"
+    onclick="moverGaleria('catalogo', -1)">❮</button> 
+   <div class="galeria-catalogo">
+    <div class="producto">
+  <img src="img/catalogo/catalogo19.jpg" alt="Mueble Arca Orlando">
+  <button type="button" onclick="cotizarProducto('catalogo19.jpg')">
+    🟢 Cotizar este producto
+  </button>
+</div>
+  <div class="producto">
+  <img src="img/catalogo/catalogo23.jpg" alt="Mueble Arca Orlando">
+  <button type="button" onclick="cotizarProducto('catalogo23.jpg')">
+    🟢 Cotizar este producto
+  </button>
+</div>
+    
+    <div class="producto">
+  <img src="img/catalogo/catalogo24.jpg" alt="Mueble Arca Orlando">
+  <button type="button" onclick="cotizarProducto('catalogo24.jpg')">
+    🟢 Cotizar este producto
+  </button>
+</div>
+     <div class="producto">
+  <img src="img/catalogo/catalogo25.jpg" alt="Mueble Arca Orlando">
+  <button type="button" onclick="cotizarProducto('catalogo25.jpg')">
+    🟢 Cotizar este producto
+  </button>
+</div>
+     
   </div>
+
+<button type="button" class="flecha derecha"
+  onclick="moverGaleria('catalogo', 1)">❯</button>
+</div>
 </section>
 
 <section id="trabajos" class="trabajos">
@@ -137,7 +166,10 @@
 <h2>Nuestros trabajos</h2>
 <p>Conoce algunos de los muebles realizados por Mueblería Arca Orlando.</p>
 </div>
-<div class="galeria-trabajos">
+<div class="carrusel-trabajos">
+  <button type="button" class="flecha izquierda"
+    onclick="moverGaleria('trabajos', -1)">❮</button>
+  <div class="galeria-trabajos">
 <img src="img/catalogo/catalogo01.jpeg" alt="Trabajo realizado por Mueblería Arca Orlando">
 <img src="img/catalogo/catalogo02.jpeg" alt="Trabajo realizado por Mueblería Arca Orlando">
 <img src="img/catalogo/catalogo03.jpeg" alt="Trabajo realizado por Mueblería Arca Orlando">
@@ -164,6 +196,8 @@
 <img src="img/catalogo/catalogo24.jpeg" alt="Trabajo realizado por Mueblería Arca Orlando">
 <img src="img/catalogo/catalogo25.jpeg" alt="Trabajo realizado por Mueblería Arca Orlando">
 <img src="img/catalogo/catalogo26.jpeg" alt="Trabajo realizado por Mueblería Arca Orlando">
+</div><button type="button" class="flecha derecha"
+  onclick="moverGaleria('trabajos', 1)">❯</button>
 </div>
 </section>
 
