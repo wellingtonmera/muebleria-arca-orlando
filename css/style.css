@@ -585,3 +585,45 @@ a.whatsapp-flotante,
 a[href*="wa.me"] {
     color: white !important;
 }
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  header, .header {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .logo {
+    max-width: 100%;
+  }
+
+  .logo img {
+    max-width: 70px;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
