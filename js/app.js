@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const carrusel = document.querySelector(".carrusel");
+    const carrusel = document.querySelector(".galeria, .galeria-trabajos, .carrusel");
     const botonIzquierda = document.querySelector(".control.izquierda");
     const botonDerecha = document.querySelector(".control.derecha");
 
