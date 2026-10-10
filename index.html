@@ -300,11 +300,37 @@
 
 <script src="js/app.js"></script>
 <script>
-function cotizarProducto(nombre) {
+async function cotizarProducto(nombre) {
   const telefono = "593989553056";
   const mensaje = "Hola, vengo de la página Mueblería Arca Orlando. Quiero cotizar este producto: " + nombre;
-  const enlace = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
-  window.open(enlace, "_blank");
+  const fotoURL = new URL("img/catalogo/" + nombre, window.location.href).href;
+
+  try {
+    const respuesta = await fetch(fotoURL);
+    if (!respuesta.ok) throw new Error("Imagen no disponible");
+
+    const archivo = new File(
+      [await respuesta.blob()],
+      nombre,
+      { type: "image/jpeg" }
+    );
+
+    if (navigator.canShare && navigator.canShare({ files: [archivo] })) {
+      await navigator.share({
+        files: [archivo],
+        text: mensaje
+      });
+      return;
+    }
+  } catch (error) {
+    if (error.name === "AbortError") return;
+  }
+
+  const texto = mensaje + "\nFoto: " + fotoURL;
+  window.open(
+    "https://wa.me/" + telefono + "?text=" + encodeURIComponent(texto),
+    "_blank"
+  );
 }
 document.querySelectorAll("img").forEach(function(foto) {
   foto.style.cursor = "zoom-in";
