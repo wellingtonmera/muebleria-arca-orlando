@@ -323,5 +323,18 @@ document.querySelectorAll("img").forEach(function(foto) {
   });
 });</script>
 
-</body>
+<script>
+function moverGaleria(tipo, direccion) {
+  const galeria = document.querySelector(
+    tipo === "catalogo" ? ".galeria-catalogo" : ".galeria-trabajos"
+  );
+
+  if (!galeria) return;
+
+  galeria.scrollBy({
+    left: direccion * 320,
+    behavior: "smooth"
+  });
+}
+</script></body>
 </html>
