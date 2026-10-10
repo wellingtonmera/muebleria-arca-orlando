@@ -123,7 +123,7 @@
     <p>Conoce algunos de nuestros diseños.</p>
   </div>
 
- <div class="carrusel-catalogo">
+
   <button type="button" class="flecha izquierda"
      onclick="moverGaleria('catalogo', -1)">❮</button>
    <div class="galeria-catalogo">
@@ -336,5 +336,23 @@ function moverGaleria(tipo, direccion) {
     behavior: "smooth"
   });
 }
-</script></body>
+// Movimiento automático de las 4 fotos
+document.addEventListener("DOMContentLoaded", function () {
+  const galeria = document.querySelector(".galeria-catalogo");
+  if (!galeria) return;
+
+  let fotoActual = 0;
+
+  setInterval(function () {
+    const fotos = galeria.querySelectorAll(".producto");
+    if (fotos.length === 0) return;
+
+    fotoActual = (fotoActual + 1) % fotos.length;
+
+    galeria.scrollTo({
+      left: fotos[fotoActual].offsetLeft - fotos[0].offsetLeft,
+      behavior: "smooth"
+    });
+  }, 3000);
+});</script></body>
 </html>
