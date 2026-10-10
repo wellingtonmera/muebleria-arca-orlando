@@ -627,3 +627,31 @@ a[href*="wa.me"] {
     gap: 10px;
   }
 }
+/* Flechas y movimiento del catálogo */
+.carrusel-catalogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.galeria-catalogo {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.galeria-catalogo .producto {
+  flex: 0 0 85%;
+}
+
+.carrusel-catalogo .flecha {
+  display: block;
+  flex-shrink: 0;
+  cursor: pointer;
+  z-index: 2;
+}
